@@ -12,3 +12,5 @@ Article.create(title: 'Hay is an article', content: 'Hehehehe')
 Article.create(title: 'Way is an article', content: 'Hehehehe')
 Article.create(title: 'Tey is an article', content: 'Hehehehe')
 Article.create(title: 'Wake is an article', content: 'Hehehehe')
+
+Role.create(name: 'admin', activities: ['article:index', 'article:show'])

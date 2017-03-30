@@ -1,18 +1,11 @@
 class ArticlePolicy < ApplicationPolicy
-  def index?
-    user.role == 'admin'
-  end
+  # def index?
+  #   user.role == 'admin'
+  # end
 
-  class Scope
-    attr_reader :user, :scope
-
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
+  class Scope < Struct.new(:user, :scope)
     def resolve
-      scope.all
+      scope
     end
   end
 end

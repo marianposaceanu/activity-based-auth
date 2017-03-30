@@ -6,48 +6,33 @@ class ApplicationPolicy
     @record = record
   end
 
-  def index?
-    false
+  def user_activities
+    @user.roles.select(:activities).distinct.map(&:activities).flatten
   end
 
-  def show?
-    scope.where(:id => record.id).exists?
+  def inferred_activity(method)
+    single_object = 
+      if record.respond_to? :size
+        record.first
+      else
+        record
+      end
+
+    "#{single_object.class.name.downcase}:#{method.to_s}"
   end
 
-  def create?
-    false
-  end
+  def method_missing(name, *args)
+    # byebug
+    method_name = name.to_s
 
-  def new?
-    create?
-  end
-
-  def update?
-    false
-  end
-
-  def edit?
-    update?
-  end
-
-  def destroy?
-    false
+    if method_name.to_s.last == '?'
+      user_activities.include?(inferred_activity(method_name.to_s.gsub('?','')))
+    else
+      super
+    end
   end
 
   def scope
     Pundit.policy_scope!(user, record.class)
-  end
-
-  class Scope
-    attr_reader :user, :scope
-
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      scope
-    end
   end
 end
