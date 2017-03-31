@@ -25,14 +25,24 @@ $ rails s
 One issue is that for dynamic, editable permissions something like 'article:update' makes no sense to the app user and leaks details into the UI hence:
 
 ```yaml
-admin:
-   - action: article:index
-     description: Show the full articles
-   - action: article:show
-     description: Show one article
-simpleton:
-   - action: article:show
-     description: Show one article
+article:
+  view:
+     - action: article:index
+       description: Show all the articles
+     - action: article:show
+       description: Show one article
+  edit:
+     - action: article:new
+       description: Show the new article page
+     - action: article:edit
+       description: Show the edit article page
+     - action: article:create
+       description: Be able to create an article
+     - action: article:update
+       description: Be able to update an article
+  destroy:
+     - action: article:destroy
+       description: Be able to destroy an article
 ```
 
 in `config\activities.yml`
