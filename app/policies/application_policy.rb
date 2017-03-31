@@ -7,26 +7,14 @@ class ApplicationPolicy
   end
 
   def user_activities
-    @user.roles.select(:activities).distinct.map(&:activities).flatten
+    user.role.activities
   end
 
-  def inferred_activity(method)
-    single_object = 
-      if record.respond_to? :size
-        record.first
-      else
-        record
-      end
+  def method_missing(method_name, *args)
+    activity_inferrer = ActivityPolicyInferrer.new(method_name, record)
 
-    "#{single_object.class.name.downcase}:#{method.to_s}"
-  end
-
-  def method_missing(name, *args)
-    # byebug
-    method_name = name.to_s
-
-    if method_name.to_s.last == '?'
-      user_activities.include?(inferred_activity(method_name.to_s.gsub('?','')))
+    if activity_inferrer.policy_method?
+      user_activities.include?(activity_inferrer.key_name)
     else
       super
     end
