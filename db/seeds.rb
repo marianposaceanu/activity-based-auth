@@ -13,4 +13,20 @@ Article.create(title: 'Way is an article', content: 'Hehehehe')
 Article.create(title: 'Tey is an article', content: 'Hehehehe')
 Article.create(title: 'Wake is an article', content: 'Hehehehe')
 
-Role.create(name: 'admin', activities: ['article:index', 'article:show'])
+admin_activities = [
+  'article:index',
+  'article:show',
+  'article:new',
+  'article:edit',
+  'article:create',
+  'article:update',
+  'article:destroy'
+]
+
+simpleton_activities = [
+  'article:index',
+  'article:show'
+]
+
+Role.create(name: 'admin', activities: admin_activities)
+Role.create(name: 'simpleton', activities: simpleton_activities)

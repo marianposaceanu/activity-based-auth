@@ -1,0 +1,8 @@
+admin:
+   - action: article:index
+     description: Show the full articles
+   - action: article:show
+     description: Show one article
+simpleton:
+   - action: article:show
+     description: Show one article
