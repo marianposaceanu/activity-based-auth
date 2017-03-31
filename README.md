@@ -47,12 +47,21 @@ article:
 
 in `config\activities.yml`
 
-We can describe them a priori in a simple, centralised, YML file.
+We can describe them a priori in a simple, centralised, YML file and also use them for the initial seeds:
+
+```ruby
+simpleton_activities =
+    activities['article']['view'].map { |a| a['action'] }
+
+Role.create(name: 'simpleton', activities: simpleton_activities)
+```
 
 ##### Source files of interest:
 
+- https://github.com/dakull/activity-based-auth/blob/master/db/seeds.rb
 - https://github.com/dakull/activity-based-auth/blob/master/config/activities.yml
 - https://github.com/dakull/activity-based-auth/blob/master/app/policies/application_policy.rb
+- https://github.com/dakull/activity-based-auth/blob/master/app/policies/activity_policy_inferrer.rb
 
 ##### Notes:
 
