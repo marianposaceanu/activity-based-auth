@@ -7,6 +7,11 @@ end
 
 gem 'pundit'
 
+# CVE Fixes
+gem 'nokogiri', '>= 1.10.4'
+gem 'rack', '>= 2.0.6'
+gem 'loofah', '>= 2.3.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
