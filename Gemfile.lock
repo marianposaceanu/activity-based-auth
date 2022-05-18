@@ -82,11 +82,11 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.0)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.8.0)
     minitest (5.14.4)
     nio4r (2.5.8)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.13.5)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pg (1.1.4)
     puma (4.3.10)
@@ -178,7 +178,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   loofah (>= 2.3.1)
-  nokogiri (~> 1.12.5)
+  nokogiri (~> 1.13.5)
   pg
   puma (~> 4.3)
   pundit
