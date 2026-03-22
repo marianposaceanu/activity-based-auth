@@ -8,16 +8,19 @@ end
 gem 'pundit'
 
 # CVE Fixes
-gem "nokogiri", ">= 1.14.3"
-gem 'rack', '>= 2.0.6'
+gem 'net-imap', '>= 0.5.7'
+gem "nokogiri", ">= 1.19.1"
+gem 'rack', '>= 2.2.22'
+gem 'rails-html-sanitizer', '>= 1.6.1'
 gem 'loofah', '>= 2.3.1'
+gem 'thor', '>= 1.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6'
+gem 'rails', '~> 7.1', '>= 7.1.5.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 6'
+gem 'puma', '~> 6.4', '>= 6.4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,12 +50,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman', require: false
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'listen', '~> 3.8'
   gem 'faker'
   gem 'awesome_print'
 end
