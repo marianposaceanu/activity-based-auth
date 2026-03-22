@@ -10,13 +10,14 @@ gem 'pundit'
 # CVE Fixes
 gem 'net-imap', '>= 0.5.7'
 gem "nokogiri", ">= 1.19.1"
+gem 'ostruct'
 gem 'rack', '>= 2.2.22'
 gem 'rails-html-sanitizer', '>= 1.6.1'
 gem 'loofah', '>= 2.3.1'
 gem 'thor', '>= 1.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.2', '>= 7.2.2.1'
+gem 'rails', '~> 8.1', '>= 8.1.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -35,7 +36,7 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.14'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
