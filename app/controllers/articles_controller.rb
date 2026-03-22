@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :current_user
 
-  include Pundit
+  include Pundit::Authorization
   after_action :verify_authorized
   # after_action :verify_policy_scoped
 

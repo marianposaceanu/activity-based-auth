@@ -16,7 +16,7 @@ gem 'loofah', '>= 2.3.1'
 gem 'thor', '>= 1.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1', '>= 7.1.5.2'
+gem 'rails', '~> 7.2', '>= 7.2.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server

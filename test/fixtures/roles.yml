@@ -1,0 +1,16 @@
+simpleton:
+  name: simpleton
+  activities:
+    - article:index
+    - article:show
+
+admin:
+  name: admin
+  activities:
+    - article:index
+    - article:show
+    - article:new
+    - article:edit
+    - article:create
+    - article:update
+    - article:destroy
