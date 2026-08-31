@@ -9,7 +9,7 @@ gem 'pundit'
 
 # CVE Fixes
 gem 'net-imap', '>= 0.5.7'
-gem "nokogiri", ">= 1.19.1"
+gem "nokogiri", ">= 1.19.4"
 gem 'ostruct'
 gem 'rack', '>= 2.2.22'
 gem 'rails-html-sanitizer', '>= 1.6.1'
@@ -17,11 +17,11 @@ gem 'loofah', '>= 2.3.1'
 gem 'thor', '>= 1.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 8.1', '>= 8.1.2'
+gem 'rails', '~> 8.1', '>= 8.1.3.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 6.4', '>= 6.4.3'
+gem 'puma', '~> 7.2', '>= 7.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
